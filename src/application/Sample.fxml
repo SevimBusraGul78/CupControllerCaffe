@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="370.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <children>
+      <ImageView fitHeight="370.0" fitWidth="650.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Users/Safranbolu78/Downloads/Brown%20Simple%20Elegant%20Coffee%20Shop%20Presentation%20(1).jpg" />
+         </image>
+      </ImageView>
+      <TabPane layoutX="355.0" layoutY="136.0" prefHeight="212.0" prefWidth="283.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tabadmin" text="Admin Giriş ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="txtgiris" layoutX="10.0" layoutY="27.0" text="Giriş Yap " />
+                        <Label fx:id="txtsifre" layoutX="24.0" layoutY="64.0" text="Şifre" />
+                        <TextField fx:id="txtfieldgiris" layoutX="82.0" layoutY="24.0" promptText="Kullanıcı Adını Giriniz" />
+                        <Button fx:id="adminbtngiris" layoutX="96.0" layoutY="102.0" mnemonicParsing="false" onAction="#btnadmingiris" prefHeight="37.0" prefWidth="123.0" style="-fx-background-color: #C2A375;" text="Giriş Yap " />
+                        <PasswordField fx:id="txtfieldsifre" layoutX="82.0" layoutY="60.0" promptText="Şifre Giriniz " />
+                        <TextField fx:id="admintxtgiriş" layoutX="83.0" layoutY="24.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabmüsteri" text="Müşteri">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="61.0" layoutY="103.0" mnemonicParsing="false" onAction="#btnmusterigiris" style="-fx-background-color: #C2A375;" text="Giriş Yap " />
+                        <Button layoutX="166.0" layoutY="103.0" mnemonicParsing="false" onAction="#btnkayitol" style="-fx-background-color: #C2A375;" text="Kayıt Ol " />
+                        <Label fx:id="lblmüsüterisifre" layoutX="24.0" layoutY="64.0" text="Şifre" />
+                        <Label fx:id="lblmüsterigiris" layoutX="14.0" layoutY="18.0" text="Giriş Yap" />
+                        <PasswordField fx:id="musterigiris" layoutX="153.0" layoutY="159.0" prefHeight="26.0" prefWidth="136.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
