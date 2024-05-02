@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ikinciSayfa">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ikinciSayfa">
    <children>
-      <Button mnemonicParsing="false" text="Button" />
-      <CheckBox mnemonicParsing="false" text="CheckBox" />
+      <ImageView fitHeight="370.0" fitWidth="650.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Users/Safranbolu78/Downloads/Brown%20Simple%20Elegant%20Coffee%20Shop%20Presentation.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnstok" layoutX="112.0" layoutY="218.0" mnemonicParsing="false" onAction="#btnStok" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: #F8F5EC;" text="Button" />
+      <Button fx:id="btnmusteri" layoutX="286.0" layoutY="218.0" mnemonicParsing="false" onAction="#btnMusteri" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: #F8F5EC;" text="Button" />
+      <Button fx:id="btnboş" layoutX="477.0" layoutY="224.0" mnemonicParsing="false" onAction="#btnBos" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: #F8F5EC;" text="Button" />
    </children>
 </AnchorPane>

@@ -1,24 +1,58 @@
 package application;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class ikinciSayfa {
 
     @FXML
-    private Label labelInfo;
+    private Button btnboş;
 
     @FXML
-    void btnKapatClick(ActionEvent event) {
-        // Butona tıklanınca ikinci sayfayı kapat
-        Stage stage = (Stage) labelInfo.getScene().getWindow();
-        stage.close();
+    private Button btnmusteri;
+
+    @FXML
+    private Button btnstok;
+
+    @FXML
+    void btnBos(ActionEvent event) {
+        // Boş butona tıklanınca yapılacak işlemler
     }
 
-    public void setInfoText(String text) {
-        labelInfo.setText(text);
+    @FXML
+    void btnMusteri(ActionEvent event) {
+        // Müşteri butonuna tıklanınca yapılacak işlemler
     }
+
+    @FXML
+    void btnStok(ActionEvent event) {
+    	  try {
+              // Üçüncü sayfanın FXML dosyasını yükle
+              Parent root = FXMLLoader.load(getClass().getResource("ucuncuAdmin.fxml"));
+              Scene scene = new Scene(root);
+              
+              // Stage'i al
+              Stage stage = (Stage) btnstok.getScene().getWindow();
+              
+              // Yeni sahneyi göster
+              stage.setScene(scene);
+              stage.show();
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
+      }
+      
+    
+@FXML
+void initialize() {
+    // Başlangıç ayarlamaları burada yapılabilir.
 }
- 
+
+}

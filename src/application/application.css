@@ -1,3 +1,29 @@
 /* styles.css */
 
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.tab .tab-label {
+    -fx-text-fill: black; /* Tab metin rengi: siyah */
+}.root {
+    -fx-font-weight: bold;
+}
+
+.label {
+    -fx-font-weight: bold;
+}
+
+.text-field {
+    -fx-font-weight: bold;
+}
+
+.text-area {
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-font-weight: bold;
+}
+
+.tab {
+    -fx-font-weight: bold;
+}

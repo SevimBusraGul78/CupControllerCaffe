@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -18,13 +19,16 @@ import javafx.stage.Stage;
 public class SampleController {
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
     private Button adminbtngiris;
+
+    @FXML
+    private TextField admintxtgiriş;
+
+    @FXML
+    private Button btngiris;
+
+    @FXML
+    private Button btnkayıt;
 
     @FXML
     private Label lblmüsterigiris;
@@ -33,16 +37,22 @@ public class SampleController {
     private Label lblmüsüterisifre;
 
     @FXML
+    private PasswordField musterigiris;
+
+    @FXML
     private Tab tabadmin;
 
     @FXML
     private Tab tabmüsteri;
 
     @FXML
-    private TextField admintxtgiriş;
+    private TextField txtfieldgiris;
 
     @FXML
-    private TextField txtfieldsifre;
+    private TextField txtfieldgiris1;
+
+    @FXML
+    private PasswordField txtfieldsifre;
 
     @FXML
     private Label txtgiris;
@@ -50,14 +60,7 @@ public class SampleController {
     @FXML
     private Label txtsifre;
 
-    @FXML
-    void btnalert(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Bilgi Mesajıdır ....... ");
-        alert.setHeaderText("Bu kodu yazan kız mükemmeldir");
-        alert.setContentText("Bilgilendirme Bitmiştir....\n by Sevim Büşra ");
-        alert.showAndWait();
-    }
+ 
 
     @FXML
     void btnadmingiris(ActionEvent event) {
@@ -86,7 +89,22 @@ public class SampleController {
 
     @FXML
     void btnmusterigiris(ActionEvent event) {
-        // Buraya müşteri giriş işlemleri eklenebilir.
+    	if (LoginKontrol(txtfieldgiris1.getText(), musterigiris.getText())) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("oyun.java"));
+                Parent root = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.setTitle("İkinci Sayfa");
+                stage.show();
+
+                // İlk sayfayı kapatmak için
+                Stage currentStage = (Stage) adminbtngiris.getScene().getWindow();
+                currentStage.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML
@@ -106,17 +124,31 @@ public class SampleController {
         } else {
             // Kullanıcı adı ve şifreyi kontrol et
             if (kul.equals("admin") && sifre.equals("pass")) {
-                alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("CupControl otomasyonu");
-                alert.setHeaderText(null);
-                alert.setContentText("Doğru giriş!");
-                alert.showAndWait();
                 return true;
             } else {
                 alert.setContentText("Yanlış kullanıcı adı veya şifre!");
                 alert.showAndWait();
                 return false;
-            }
+            } 
         }
     }
-}
+        public boolean MLoginKontrol(String Mkul, String Msifre) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("CupControl otomasyonu");
+            alert.setHeaderText("Kullanıcı adını veya Şifreni kontrol et ");
+
+            if (Mkul.isEmpty() || Msifre.isEmpty()) {
+                alert.setContentText("Kullanıcı adı ve şifre boş bırakılamaz!");
+                alert.showAndWait();
+                return false;
+            } else {
+                // Kullanıcı adı ve şifreyi kontrol et
+                if (Mkul.equals("admin") && Msifre.equals("pass")) {
+                    return true;
+                } else {
+                    alert.setContentText("Yanlış kullanıcı adı veya şifre!");
+                    alert.showAndWait();
+                    return false;
+                }
+    }
+        }}
