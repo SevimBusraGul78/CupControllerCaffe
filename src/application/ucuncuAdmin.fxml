@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -16,12 +17,12 @@
         <items>
           <AnchorPane>
                <children>
-                  <TableView fx:id="TableColumn" layoutX="120.0" prefHeight="200.0" prefWidth="398.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="TableColumn" layoutX="120.0" onMouseClicked="#TableViewMouseClicked" prefHeight="200.0" prefWidth="398.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn prefWidth="97.60003358125687" text="Kahve" />
-                      <TableColumn prefWidth="87.20001220703125" text="Kek" />
-                        <TableColumn prefWidth="105.59999084472656" text="Pasta" />
-                        <TableColumn minWidth="0.0" prefWidth="108.0" text="Kurabiye" />
+                      <TableColumn fx:id="columnKahve" prefWidth="97.60003358125687" text="Kahve" />
+                      <TableColumn fx:id="columnKek" prefWidth="87.20001220703125" text="Kek" />
+                        <TableColumn fx:id="columnPasta" prefWidth="105.59999084472656" text="Pasta" />
+                        <TableColumn fx:id="columnKurabiye" minWidth="0.0" prefWidth="108.0" text="Kurabiye" />
                     </columns>
                   </TableView>
                </children>
@@ -48,11 +49,12 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
-                  <TextField layoutX="136.0" layoutY="31.0" promptText="Kahve" />
-                  <TextField layoutX="136.0" layoutY="71.0" promptText="Kek" />
-                  <TextField layoutX="136.0" layoutY="113.0" promptText="Pasta" />
-                  <TextField layoutX="136.0" layoutY="164.0" promptText="Kurabiye" />
+                  <TextField fx:id="txtKahve" layoutX="136.0" layoutY="31.0" promptText="Kahve" />
+                  <TextField fx:id="txtKek" layoutX="136.0" layoutY="71.0" promptText="Kek" />
+                  <TextField fx:id="txtPasta" layoutX="136.0" layoutY="113.0" promptText="Pasta" />
+                  <TextField fx:id="txtKurabiye" layoutX="136.0" layoutY="164.0" promptText="Kurabiye" />
                   <Button layoutY="203.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="89.0" style="-fx-background-color: #72001C;" text="Geri" textFill="#0b0b0b" />
+                  <Label fx:id="lbluyarı" layoutX="23.0" layoutY="11.0" prefHeight="26.0" prefWidth="390.0" text="                                                                                                                                                                                                                     Label" />
                </children>
             </AnchorPane>
         </items>

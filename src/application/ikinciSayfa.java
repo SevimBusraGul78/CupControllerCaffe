@@ -40,7 +40,7 @@ public class ikinciSayfa {
               
               // Stage'i al
               Stage stage = (Stage) btnstok.getScene().getWindow();
-              
+              stage.setTitle("Stok Takibi");
               // Yeni sahneyi göster
               stage.setScene(scene);
               stage.show();
