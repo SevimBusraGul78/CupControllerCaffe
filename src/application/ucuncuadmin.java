@@ -5,6 +5,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
@@ -12,6 +14,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.scene.input.MouseEvent;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -45,6 +49,10 @@ import javafx.scene.control.TableColumn;
 
         @FXML
         private URL location;
+        
+
+        @FXML
+        private Button btngeri;
 
         @FXML
         private Button btnekle;
@@ -81,8 +89,23 @@ import javafx.scene.control.TableColumn;
         @FXML
         private Label lbluyarı;
         
-
-       
+        @FXML
+        void btngeri(ActionEvent event) {
+        	  try {
+                  // Üçüncü sayfanın FXML dosyasını yükle
+                  Parent root = FXMLLoader.load(getClass().getResource("ikincisayfa.fxml"));
+                  Scene scene = new Scene(root);
+                  
+                  // Stage'i al
+                  Stage stage = (Stage) btngeri.getScene().getWindow();
+                  stage.setTitle("admin menü");
+                  // Yeni sahneyi göster
+                  stage.setScene(scene);
+                  stage.show();
+              } catch (IOException e) {
+                  e.printStackTrace();
+              }
+          }
         @FXML
         void TableViewMouseClicked(MouseEvent event) {
             StokTakibi kayitlar = TableColumn.getSelectionModel().getSelectedItem();
@@ -102,7 +125,6 @@ import javafx.scene.control.TableColumn;
         ResultSet getirilen = null;
         String sql;
         
-       
         public void DegerleriGetir(TableView tablo) {
        	 sql="select * from stoktakibi";
        	ObservableList<StokTakibi> kayıtlarListe=FXCollections.observableArrayList();
@@ -112,9 +134,7 @@ import javafx.scene.control.TableColumn;
        		ResultSet getirilen=sorguİfadesi.executeQuery();
        		while (getirilen.next()) {
    				kayıtlarListe.add(new StokTakibi(getirilen.getInt("Kahve"), getirilen.getInt("Kek"), getirilen.getInt("Pasta"), getirilen.getInt("Kurabiye")));
-   				
    			}
-       		
        		columnKahve.setCellValueFactory(new PropertyValueFactory<>("Kahve"));
        		columnKek.setCellValueFactory(new PropertyValueFactory<>("Kek"));
        		columnPasta.setCellValueFactory(new PropertyValueFactory<>("Pasta"));

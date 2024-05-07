@@ -2,7 +2,15 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import com.IsteMYSql.Util.*;
+import com.IsteMYSql.*;
+import com.IsteMYSql.Util.VeritabaniUtil;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +25,10 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class SampleController {
+	
+	public SampleController() {
+		baglanti=VeritabaniUtil.Baglan();
+	}
 
     @FXML
     private Button adminbtngiris;
@@ -81,17 +93,31 @@ public class SampleController {
             }
         }
     }
-
+        Connection baglanti = null;
+        PreparedStatement sorguİfadesi = null;
+      
+        String sql;
     @FXML
-    void btnkayitol(ActionEvent event) {
-        // Buraya kayıt olma işlemleri eklenebilir.
-    }
+         void btnkayitol(ActionEvent event) {
+    	
+    	 String sql = "INSERT INTO login (isim,sifre) VALUES (?, ?)";
+         try {
+             sorguİfadesi = baglanti.prepareStatement(sql);
+             sorguİfadesi.setString(1, txtfieldgiris1.getText().trim());
+             sorguİfadesi.setString(2, musterigiris.getText().trim());
+             sorguİfadesi.executeUpdate();
+             
+         } catch (SQLException e) {
+            
+         }
+     }      
+    
 
     @FXML
     void btnmusterigiris(ActionEvent event) {
     	if (LoginKontrol(txtfieldgiris1.getText(), musterigiris.getText())) {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("oyun.java"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("musteri.fxml"));
                 Parent root = (Parent) fxmlLoader.load();
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));

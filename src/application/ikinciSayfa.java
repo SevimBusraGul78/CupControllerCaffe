@@ -28,7 +28,8 @@ public class ikinciSayfa {
 
     @FXML
     void btnMusteri(ActionEvent event) {
-        // Müşteri butonuna tıklanınca yapılacak işlemler
+       
+
     }
 
     @FXML

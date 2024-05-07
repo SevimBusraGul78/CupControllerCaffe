@@ -53,7 +53,7 @@
                   <TextField fx:id="txtKek" layoutX="136.0" layoutY="71.0" promptText="Kek" />
                   <TextField fx:id="txtPasta" layoutX="136.0" layoutY="113.0" promptText="Pasta" />
                   <TextField fx:id="txtKurabiye" layoutX="136.0" layoutY="164.0" promptText="Kurabiye" />
-                  <Button layoutY="203.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="89.0" style="-fx-background-color: #72001C;" text="Geri" textFill="#0b0b0b" />
+                  <Button fx:id="btngeri" layoutY="203.0" mnemonicParsing="false" onAction="#btngeri" prefHeight="47.0" prefWidth="89.0" style="-fx-background-color: #72001C;" text="Geri" textFill="#0b0b0b" />
                   <Label fx:id="lbluyarı" layoutX="23.0" layoutY="11.0" prefHeight="26.0" prefWidth="390.0" text="                                                                                                                                                                                                                     Label" />
                </children>
             </AnchorPane>
