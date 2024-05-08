@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenüController">
    <children>
-    
+      <ImageView fitHeight="370.0" fitWidth="650.0" layoutX="-3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Users/Safranbolu78/Downloads/Brown%20Simple%20Elegant%20Coffee%20Shop%20Presentation%20(2).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn1" layoutX="261.0" layoutY="70.0" mnemonicParsing="false" onAction="#btn1" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #3F1C13;" text="Ekle" textFill="#f7f7f7">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn2" layoutX="261.0" layoutY="136.0" mnemonicParsing="false" onAction="#btn2" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #3F1C13;" text="Ekle" textFill="#f7f7f7">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn3" layoutX="261.0" layoutY="207.0" mnemonicParsing="false" onAction="#btn3" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #3F1C13;" text="Ekle" textFill="#f7f7f7">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn4" layoutX="261.0" layoutY="273.0" mnemonicParsing="false" onAction="#btn4" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #3F1C13;" text="Ekle" textFill="#f7f7f7">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Text fx:id="txtSonuc" layoutX="284.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="60.79996337890634">
+         <font>
+            <Font size="25.0" />
+         </font></Text>
+      <Button fx:id="siparişVer" layoutX="369.0" layoutY="331.0" mnemonicParsing="false" onAction="#btnsiparisVer" text="Sipariş Ver" />
    </children>
 </AnchorPane>

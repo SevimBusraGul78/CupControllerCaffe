@@ -24,6 +24,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 
 public class musteriTakipController {
@@ -78,7 +79,8 @@ public musteriTakipController() {
 
     @FXML
     void btnsorgula(ActionEvent event) {
-
+      sql="select * from islemler where islemTarihi > '"+dateBaslangıc.getValue()+"' and islemTarih <'"+datebitis.getValue()+"'" ;
+      DegerleriGetir(TableView_Aramalar, sql);
     }
 
     @FXML
@@ -88,7 +90,14 @@ public musteriTakipController() {
 
     @FXML
     void txt_arama_KeyPressed(KeyEvent event) {
-
+    	if (txt_id.getText().equals("")) {
+    		 sql = "select * from islemler";
+		}
+    	else {
+    		sql="select * from islemler where islemAcıklama like '%" +txt_id.getText()+"%' or user like '%"+txt_id.getText()+"%";  
+		}
+    	
+ DegerleriGetir(TableView_Aramalar, sql);
     }
 
     @FXML
@@ -130,6 +139,9 @@ public musteriTakipController() {
     void initialize() {
     	sql="select * from islemler";
       DegerleriGetir(TableView_Aramalar, sql);
+      
+      dateBaslangıc.setValue(LocalDate.now());
+      datebitis.setValue(LocalDate.now());
 
     }
 

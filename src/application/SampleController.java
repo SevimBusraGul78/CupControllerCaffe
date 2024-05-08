@@ -32,6 +32,7 @@ public class SampleController {
 
     @FXML
     private Button adminbtngiris;
+    
 
     @FXML
     private TextField admintxtgiriş;
@@ -115,9 +116,9 @@ public class SampleController {
 
     @FXML
     void btnmusterigiris(ActionEvent event) {
-    	if (LoginKontrol(txtfieldgiris1.getText(), musterigiris.getText())) {
+    	if (MLoginKontrol(txtfieldgiris1.getText(), musterigiris.getText())) {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("musteri.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menü.fxml"));
                 Parent root = (Parent) fxmlLoader.load();
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
@@ -125,7 +126,7 @@ public class SampleController {
                 stage.show();
 
                 // İlk sayfayı kapatmak için
-                Stage currentStage = (Stage) adminbtngiris.getScene().getWindow();
+                Stage currentStage = (Stage) btngiris.getScene().getWindow();
                 currentStage.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -139,42 +140,59 @@ public class SampleController {
     }
 
     public boolean LoginKontrol(String kul, String sifre) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("CupControl otomasyonu");
-        alert.setHeaderText("Kullanıcı adını veya Şifreni kontrol et ");
+    
+    	    Alert alert = new Alert(Alert.AlertType.ERROR);
+    	    alert.setTitle("CupControl otomasyonu");
+    	    alert.setHeaderText("Kullanıcı adını veya Şifreni kontrol et ");
 
-        if (kul.isEmpty() || sifre.isEmpty()) {
-            alert.setContentText("Kullanıcı adı ve şifre boş bırakılamaz!");
-            alert.showAndWait();
-            return false;
-        } else {
-            // Kullanıcı adı ve şifreyi kontrol et
-            if (kul.equals("admin") && sifre.equals("pass")) {
+    	    if (kul.isEmpty() || sifre.isEmpty()) {
+    	        alert.setContentText("Kullanıcı adı ve şifre boş bırakılamaz!");
+    	        alert.showAndWait();
+    	        return false;
+    	    } else {
+    	        // Sadece hardcoded olarak belirlenmiş bir admin kullanıcı adı ve şifresi ile kontrol yapalım
+    	        if (kul.equals("admin") && sifre.equals("pass")) {
+    	            return true;
+    	        } else {
+    	            alert.setContentText("Yanlış kullanıcı adı veya şifre!");
+    	            alert.showAndWait();
+    	            return false;
+    	        } 
+    	    }
+
+    }
+
+    
+public boolean MLoginKontrol(String Mkul, String Msifre) {
+    Alert alert = new Alert(Alert.AlertType.ERROR);
+    alert.setTitle("CupControl otomasyonu");
+    alert.setHeaderText("Üye olduğuna emin misin ");
+
+    if (Mkul.isEmpty() || Msifre.isEmpty()) {
+        alert.setContentText("Kullanıcı adı ve şifre boş bırakılamaz!");
+        alert.showAndWait();
+        return false;
+    } else {
+        try {
+            String sql = "SELECT * FROM login WHERE isim = ? AND sifre = ?";
+            PreparedStatement sorguIfadesi = baglanti.prepareStatement(sql);
+            sorguIfadesi.setString(1, Mkul);
+            sorguIfadesi.setString(2, Msifre);
+            ResultSet sonuc = sorguIfadesi.executeQuery();
+            
+            if (sonuc.next()) { // Eğer sonuç varsa, yani giriş doğru ise
                 return true;
             } else {
-                alert.setContentText("Yanlış kullanıcı adı veya şifre!");
+                alert.setContentText("Üye olduğuna emin misin ? ");
                 alert.showAndWait();
                 return false;
-            } 
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
         }
     }
-        public boolean MLoginKontrol(String Mkul, String Msifre) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("CupControl otomasyonu");
-            alert.setHeaderText("Kullanıcı adını veya Şifreni kontrol et ");
+}
 
-            if (Mkul.isEmpty() || Msifre.isEmpty()) {
-                alert.setContentText("Kullanıcı adı ve şifre boş bırakılamaz!");
-                alert.showAndWait();
-                return false;
-            } else {
-                // Kullanıcı adı ve şifreyi kontrol et
-                if (Mkul.equals("admin") && Msifre.equals("pass")) {
-                    return true;
-                } else {
-                    alert.setContentText("Yanlış kullanıcı adı veya şifre!");
-                    alert.showAndWait();
-                    return false;
-                }
     }
-        }}
+

@@ -29,9 +29,21 @@ public class ikinciSayfa {
     @FXML
     void btnMusteri(ActionEvent event) {
        
-
-    }
-
+    	 try {
+             // Üçüncü sayfanın FXML dosyasını yükle
+             Parent root = FXMLLoader.load(getClass().getResource("müsteri.fxml"));
+             Scene scene = new Scene(root);
+             
+             // Stage'i al
+             Stage stage = (Stage) btnstok.getScene().getWindow();
+             stage.setTitle("Stok Takibi");
+             // Yeni sahneyi göster
+             stage.setScene(scene);
+             stage.show();
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+     }
     @FXML
     void btnStok(ActionEvent event) {
     	  try {
