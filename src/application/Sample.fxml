@@ -28,7 +28,7 @@
                         <TextField fx:id="txtfieldgiris" layoutX="82.0" layoutY="24.0" promptText="Kullanıcı Adını Giriniz" />
                         <Button fx:id="adminbtngiris" layoutX="96.0" layoutY="102.0" mnemonicParsing="false" onAction="#btnadmingiris" prefHeight="37.0" prefWidth="123.0" style="-fx-background-color: #C2A375;" text="Giriş Yap " />
                         <PasswordField fx:id="txtfieldsifre" layoutX="82.0" layoutY="60.0" promptText="Şifre Giriniz " />
-                        <TextField fx:id="admintxtgiriş" layoutX="83.0" layoutY="24.0" />
+                        <TextField fx:id="admintxtgiriş" layoutX="83.0" layoutY="24.0" promptText="Kullanıcı Adını Giriniz" />
                      </children>
                   </AnchorPane>
             </content>
@@ -41,7 +41,7 @@
                         <Button fx:id="btnkayıt" layoutX="166.0" layoutY="103.0" mnemonicParsing="false" onAction="#btnkayitol" style="-fx-background-color: #C2A375;" text="Kayıt Ol " />
                         <Label fx:id="lblmüsüterisifre" layoutX="24.0" layoutY="64.0" text="Şifre" />
                         <Label fx:id="lblmüsterigiris" layoutX="14.0" layoutY="18.0" text="Giriş Yap" />
-                        <PasswordField fx:id="musterigiris" layoutX="91.0" layoutY="51.0" prefHeight="26.0" prefWidth="152.0" />
+                        <PasswordField fx:id="musterigiris" layoutX="91.0" layoutY="51.0" prefHeight="26.0" prefWidth="152.0" promptText="Şifre Giriniz" />
                         <TextField fx:id="txtfieldgiris1" layoutX="89.0" layoutY="14.0" promptText="Kullanıcı Adını Giriniz" />
                      </children>
                   </AnchorPane>
