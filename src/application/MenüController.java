@@ -28,6 +28,19 @@ public class MenüController {
 
     @FXML
     private ResourceBundle resources;
+    
+    @FXML
+    private Text txt1;
+
+    @FXML
+    private Text txt2;
+
+    @FXML
+    private Text txt3;
+
+    @FXML
+    private Text txt4;
+
 
     @FXML
     private URL location;
@@ -40,13 +53,25 @@ public class MenüController {
 
     @FXML
     private Button btn3;
+    
+
+    @FXML
+    private Label txtürün;
 
     @FXML
     private Button siparişVer;
 
     @FXML
-    private Label txtürün;
+    private Text kurabiyefiyatı;
 
+    @FXML
+    private Text pastafiyatı;
+    @FXML
+    private Text kahvefiyatı;
+
+    @FXML
+    private Text kekfiyatı;
+    
     @FXML
     private Button btn4;
 
@@ -62,6 +87,8 @@ public class MenüController {
     @FXML
     void btn1(ActionEvent event) {
         sepeteEkle(50, "kahve");
+        txt1.setText("kahve");
+        kahvefiyatı.setText("50");
         
     }
 
@@ -69,16 +96,22 @@ public class MenüController {
 	@FXML
     void btn2(ActionEvent event) {
         sepeteEkle(30, "kek");
+        txt2.setText("kek");
+        kekfiyatı.setText("30");
     }
 
     @FXML
     void btn3(ActionEvent event) {
         sepeteEkle(40, "pasta");
+        txt3.setText("pasta");
+        pastafiyatı.setText("40");
     }
 
     @FXML
     void btn4(ActionEvent event) {
         sepeteEkle(20, "kurabiye");
+        txt4.setText("kurabiye");
+        kurabiyefiyatı.setText("20");
     }
 
     private void sepeteEkle(double fiyat, String urun) {
@@ -109,8 +142,15 @@ public class MenüController {
             // txtisim TextField'ının değerini alarak yeni açılan pencereye aktarım işlemi
             fişController fişController = loader.getController();
             fişController.getTxtisim().setText(kullaniciadi.getText().trim());
-           
-           fişController.getÜrün2().setText(urunler);
+            fişController.getÜrün1().setText(txt1.getText().trim());
+            fişController.getÜrün2().setText(txt2.getText().trim());
+            fişController.getÜrün3().setText(txt3.getText().trim());
+            fişController.getÜrün4().setText(txt4.getText().trim());
+            fişController.getToplamfiyat().setText(txtSonuc.getText().trim());
+            fişController.getFiyat1().setText(kahvefiyatı.getText().trim());
+            fişController.getFiyat2().setText(kekfiyatı.getText().trim());
+            fişController.getFiyat3().setText(kurabiyefiyatı.getText().trim());
+            fişController.getFiyat4().setText(pastafiyatı.getText().trim());
 
         } catch (SQLException | IOException e) {
             e.printStackTrace(); // Hata mesajını yazdır

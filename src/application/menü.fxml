@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenüController">
    <children>
-      <ImageView fitHeight="370.0" fitWidth="650.0" layoutX="-3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="370.0" fitWidth="650.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../Users/Safranbolu78/Downloads/Brown%20Simple%20Elegant%20Coffee%20Shop%20Presentation%20(2).png" />
          </image>
@@ -41,11 +41,15 @@
             <Font size="25.0" />
          </font></Text>
       <Button fx:id="siparişVer" layoutX="409.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnsiparisVer" text="Sipariş Ver" />
-      <Label fx:id="txtürün" layoutX="39.0" layoutY="332.0" text="ürün">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="kullaniciadi" layoutX="93.0" layoutY="316.0" prefHeight="31.0" prefWidth="102.0" promptText="kullanıcı adı" />
+      <TextField fx:id="kullaniciadi" layoutX="13.0" layoutY="331.0" prefHeight="31.0" prefWidth="88.0" promptText="kullanıcı adı" />
+      <Text fx:id="txt1" layoutX="22.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="txt2" layoutX="57.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="txt3" layoutX="22.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="txt4" layoutX="57.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Label fx:id="txtürün" layoutX="181.0" layoutY="339.0" text="Label" visible="false" />
+      <Text fx:id="kahvefiyatı" layoutX="353.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="kekfiyatı" layoutX="353.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="pastafiyatı" layoutX="364.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="kurabiyefiyatı" layoutX="375.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
    </children>
 </AnchorPane>

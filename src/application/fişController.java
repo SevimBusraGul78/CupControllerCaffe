@@ -131,6 +131,14 @@ public class fişController  {
     
     	}
 
+	public Text getToplamfiyat() {
+		return toplamfiyat;
+	}
+
+	public void setToplamfiyat(Text toplamfiyat) {
+		this.toplamfiyat = toplamfiyat;
+	}
+
 	public Text getTxtisim() {
 		return txtisim;
 	}
