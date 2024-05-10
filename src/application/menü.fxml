@@ -46,6 +46,6 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="kullaniciadi" layoutX="3.0" layoutY="327.0" prefHeight="31.0" prefWidth="102.0" promptText="kullanıcı adı" />
+      <TextField fx:id="kullaniciadi" layoutX="93.0" layoutY="316.0" prefHeight="31.0" prefWidth="102.0" promptText="kullanıcı adı" />
    </children>
 </AnchorPane>

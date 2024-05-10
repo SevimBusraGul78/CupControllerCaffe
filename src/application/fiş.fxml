@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="321.0" prefWidth="294.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.fişController">
+   <children>
+      <ImageView fx:id="img1" fitHeight="447.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Users/Safranbolu78/Desktop/fişş.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="img2" fitHeight="134.0" fitWidth="161.0" layoutX="91.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Users/Safranbolu78/Desktop/gif.gif" />
+         </image>
+      </ImageView>
+      <Text fx:id="ürün1" layoutX="68.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="ürün2" layoutX="68.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="ürün3" layoutX="68.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="ürün4" layoutX="68.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="toplam" layoutX="59.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toplam" />
+      <Text fx:id="txtisim" layoutX="150.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="fiyat1" layoutX="202.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="fiyat2" layoutX="202.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="fiyat3" layoutX="202.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="fiyat4" layoutX="202.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="toplamfiyat" layoutX="202.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+   </children>
+</AnchorPane>

@@ -29,6 +29,11 @@
                         <Button fx:id="adminbtngiris" layoutX="96.0" layoutY="102.0" mnemonicParsing="false" onAction="#btnadmingiris" prefHeight="37.0" prefWidth="123.0" style="-fx-background-color: #C2A375;" text="Giriş Yap " />
                         <PasswordField fx:id="txtfieldsifre" layoutX="82.0" layoutY="60.0" promptText="Şifre Giriniz " />
                         <TextField fx:id="admintxtgiriş" layoutX="83.0" layoutY="24.0" promptText="Kullanıcı Adını Giriniz" />
+                        <ImageView fx:id="iamge" fitHeight="112.0" fitWidth="173.0" layoutX="183.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Users/Safranbolu78/Desktop/kahve.gif" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
             </content>
