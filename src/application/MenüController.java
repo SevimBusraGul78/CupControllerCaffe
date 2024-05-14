@@ -12,6 +12,7 @@ import com.IsteMYSql.Util.VeritabaniUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -121,7 +122,7 @@ public class MenüController {
         urunler += urun + ", ";
         txtürün.setText(urunler);
     }
-
+  
     @FXML
     void btnsiparisVer(ActionEvent event) {
         String sql = "INSERT INTO islemler (user, islemAcıklama, islemtutar) VALUES (?, ?, ?)";
@@ -134,12 +135,16 @@ public class MenüController {
             sorguİfadesi.executeUpdate();
 
             // Yeni bir pencere aç
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("fiş.fxml")); // YeniSayfa.fxml'yi yükleyin
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fiş.fxml"));
+            // YeniSayfa.fxml'yi yükleyin
             Parent root = loader.load(); // Yüklenen FXML'i bir ebeveyn düğüm olarak yükleyin
             Stage stage = new Stage(); // Yeni bir sahne oluşturun
             stage.setScene(new Scene(root)); // Sahneye kökü ayarlayın
-            stage.show(); // Pencereyi göster
             
+            stage.show(); // Pencereyi göster
+            Stage secondStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            secondStage.close();
+          
             // txtisim TextField'ının değerini alarak yeni açılan pencereye aktarım işlemi
             fişController fişController = loader.getController();
             fişController.getTxtisim().setText(kullaniciadi.getText().trim());

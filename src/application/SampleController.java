@@ -122,7 +122,7 @@ public class SampleController {
                 Parent root = (Parent) fxmlLoader.load();
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
-                stage.setTitle("İkinci Sayfa");
+                stage.setTitle("Menü");
                 stage.show();
 
                 // İlk sayfayı kapatmak için
@@ -166,7 +166,7 @@ public class SampleController {
 public boolean MLoginKontrol(String Mkul, String Msifre) {
     Alert alert = new Alert(Alert.AlertType.ERROR);
     alert.setTitle("CupControl otomasyonu");
-    alert.setHeaderText("Üye olduğuna emin misin ");
+    alert.setHeaderText("Kullanıcı bulunamadı");
 
     if (Mkul.isEmpty() || Msifre.isEmpty()) {
         alert.setContentText("Kullanıcı adı ve şifre boş bırakılamaz!");
@@ -183,7 +183,7 @@ public boolean MLoginKontrol(String Mkul, String Msifre) {
             if (sonuc.next()) { // Eğer sonuç varsa, yani giriş doğru ise
                 return true;
             } else {
-                alert.setContentText("Üye olduğuna emin misin ? ");
+                alert.setContentText("Lütfen kayıt olunuz ");
                 alert.showAndWait();
                 return false;
             }

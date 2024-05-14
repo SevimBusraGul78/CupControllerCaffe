@@ -1,5 +1,6 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +11,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -18,6 +22,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
+
 import java.sql.*;
 import com.IsteMYSql.Util.*;
 import java.sql.Connection;
@@ -72,7 +78,26 @@ public musteriTakipController() {
     @FXML
     private DatePicker datebitis;
 
-   
+    @FXML
+    private Button gerituşu;
+    @FXML
+    void gerigel(ActionEvent event) {
+    	  try {
+              // Üçüncü sayfanın FXML dosyasını yükle
+              Parent root = FXMLLoader.load(getClass().getResource("ikincisayfa.fxml"));
+              Scene scene = new Scene(root);
+              
+              // Stage'i al
+              Stage stage = (Stage) gerituşu.getScene().getWindow();
+              stage.setTitle("admin menü");
+              // Yeni sahneyi göster
+              stage.setScene(scene);
+              stage.show();
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
+      }
+    
     
     Connection baglanti = null;
     PreparedStatement sorguİfadesi = null;

@@ -117,6 +117,8 @@ public class fişController  {
 
     @FXML
     private Text ürün4;
+    
+   
 
     public class TextFieldDegeriAlmaSınıfı {
         public void textFieldDegeriniAl(String deger) {

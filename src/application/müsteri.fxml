@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -10,31 +9,44 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.musteriTakipController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.musteriTakipController">
    <children>
-      <ImageView fitHeight="502.0" fitWidth="508.0" layoutY="-102.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="618.0" fitWidth="606.0" layoutX="-3.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Users/Safranbolu78/Downloads/Brown%20Retro%20Vintage%20Cafe%20and%20Restaurant%20Label%20Logo/1.png" />
+            <Image url="@../../../../Users/Safranbolu78/Downloads/Brown%20Simple%20Elegant%20Coffee%20Shop%20Presentation%20(2).jpg" />
          </image>
       </ImageView>
-
-      <ComboBox fx:id="combouser" layoutX="86.0" layoutY="92.0" onAction="#combouser" prefWidth="150.0" />
-      <Label layoutX="14.0" layoutY="96.0" text="Kullanıcı " />
-      <DatePicker fx:id="datebitis" layoutX="324.0" layoutY="56.0" prefHeight="26.0" prefWidth="150.0" />
-      <DatePicker fx:id="dateBaslangıc" layoutX="324.0" layoutY="21.0" prefHeight="26.0" prefWidth="150.0" />
-      <Label layoutX="259.0" layoutY="25.0" text="Başlangıç" />
-      <Label layoutX="287.0" layoutY="60.0" text="Bitiş" />
-      <Button fx:id="btnsorgula" layoutX="316.0" layoutY="118.0" mnemonicParsing="false" onAction="#btnsorgula" text="Sorgula" />
-      <TableView fx:id="TableView_Aramalar" layoutX="1.0" layoutY="172.0" prefHeight="230.0" prefWidth="502.0">
+      <DatePicker fx:id="datebitis" layoutX="425.0" layoutY="161.0" prefHeight="26.0" prefWidth="150.0" />
+      <DatePicker fx:id="dateBaslangıc" layoutX="425.0" layoutY="118.0" prefHeight="26.0" prefWidth="150.0" />
+      <Label layoutX="349.0" layoutY="122.0" text="Başlangıç">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="378.0" layoutY="165.0" text="Bitiş">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Button fx:id="btnsorgula" layoutX="495.0" layoutY="203.0" mnemonicParsing="false" onAction="#btnsorgula" prefHeight="33.0" prefWidth="79.0" style="-fx-background-color: #593B1D;" text="Sorgula" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <TableView fx:id="TableView_Aramalar" layoutX="1.0" layoutY="253.0" prefHeight="246.0" prefWidth="606.0">
         <columns>
           <TableColumn fx:id="columnID" prefWidth="75.0" text="İslemID" />
           <TableColumn fx:id="columnKulAdı" prefWidth="155.20000457763672" text="Kullanıcı Adı" />
-            <TableColumn fx:id="columnAçıklmaa" prefWidth="115.20001220703125" text="Açıklama" />
-            <TableColumn fx:id="columnTutar" prefWidth="63.20001220703125" text="Tutar" />
-            <TableColumn fx:id="columnTarih" minWidth="0.0" prefWidth="90.39999999999998" text="Tarih" />
+            <TableColumn fx:id="columnAçıklmaa" prefWidth="167.199951171875" text="Açıklama" />
+            <TableColumn fx:id="columnTutar" minWidth="7.199951171875" prefWidth="96.7999267578125" text="Tutar" />
+            <TableColumn fx:id="columnTarih" minWidth="0.0" prefWidth="112.00006103515625" text="Tarih" />
         </columns>
       </TableView>
-      <TextField fx:id="txt_arama" layoutX="26.0" layoutY="31.0" onAction="#txt_arama_action" onKeyPressed="#txt_arama_KeyPressed" promptText="Aranacak metni giriniz" />
+      <TextField fx:id="txt_arama" layoutX="14.0" layoutY="161.0" onAction="#txt_arama_action" onKeyPressed="#txt_arama_KeyPressed" promptText="Aranacak metni giriniz" />
+      <Label layoutX="14.0" layoutY="123.0" prefHeight="34.0" prefWidth="286.0" text="Aramak istedğiniz kişiyi ya da açıklamayı giriniz: ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="gerituşu" layoutX="-13.0" layoutY="87.0" mnemonicParsing="false" onAction="#gerigel" style="-fx-background-color: #000000;" text="Geri" textOverrun="LEADING_WORD_ELLIPSIS" />
    </children>
 </AnchorPane>

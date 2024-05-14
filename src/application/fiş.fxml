@@ -18,20 +18,44 @@
             <Image url="@../../../../Users/Safranbolu78/Desktop/gif.gif" />
          </image>
       </ImageView>
-      <Text fx:id="ürün1" layoutX="68.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="ürün2" layoutX="68.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="ürün3" layoutX="68.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="ürün4" layoutX="68.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="toplam" layoutX="59.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toplam" />
-      <Text fx:id="txtisim" layoutX="150.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="ürün1" layoutX="68.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="12.0" />
          </font></Text>
-      <Text fx:id="fiyat1" layoutX="202.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="fiyat2" layoutX="202.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="fiyat3" layoutX="202.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="fiyat4" layoutX="202.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="toplamfiyat" layoutX="192.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="ürün2" layoutX="68.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Text fx:id="ürün3" layoutX="68.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Text fx:id="ürün4" layoutX="68.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Text fx:id="toplam" layoutX="59.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toplam" />
+      <Text fx:id="txtisim" layoutX="141.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+      <Text fx:id="fiyat1" layoutX="202.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Text fx:id="fiyat2" layoutX="202.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Text fx:id="fiyat3" layoutX="202.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Text fx:id="fiyat4" layoutX="202.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Text fx:id="toplamfiyat" fill="#f40303" layoutX="192.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Text>

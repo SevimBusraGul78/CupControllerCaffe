@@ -23,8 +23,23 @@ public class ikinciSayfa {
 
     @FXML
     void btnBos(ActionEvent event) {
-        // Boş butona tıklanınca yapılacak işlemler
+
+   	 try {
+            // Üçüncü sayfanın FXML dosyasını yükle
+            Parent root = FXMLLoader.load(getClass().getResource("ürüngrafiği.fxml"));
+            Scene scene = new Scene(root);
+            
+            // Stage'i al
+            Stage stage = (Stage) btnstok.getScene().getWindow();
+            stage.setTitle("Ürün Grafiği");
+            // Yeni sahneyi göster
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+    
 
     @FXML
     void btnMusteri(ActionEvent event) {
@@ -36,7 +51,7 @@ public class ikinciSayfa {
              
              // Stage'i al
              Stage stage = (Stage) btnstok.getScene().getWindow();
-             stage.setTitle("Stok Takibi");
+             stage.setTitle("Müşteriler");
              // Yeni sahneyi göster
              stage.setScene(scene);
              stage.show();

@@ -40,7 +40,10 @@
          <font>
             <Font size="25.0" />
          </font></Text>
-      <Button fx:id="siparişVer" layoutX="409.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnsiparisVer" text="Sipariş Ver" />
+      <Button fx:id="siparişVer" layoutX="409.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnsiparisVer" style="-fx-background-color: #BD8B5E;" text="Sipariş Ver">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <TextField fx:id="kullaniciadi" layoutX="13.0" layoutY="331.0" prefHeight="31.0" prefWidth="88.0" promptText="kullanıcı adı" />
       <Text fx:id="txt1" layoutX="22.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
       <Text fx:id="txt2" layoutX="57.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
