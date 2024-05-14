@@ -88,6 +88,7 @@ public class MenüController {
     void btn1(ActionEvent event) {
         sepeteEkle(50, "kahve");
         txt1.setText("kahve");
+        
         kahvefiyatı.setText("50");
         
     }
@@ -117,7 +118,7 @@ public class MenüController {
     private void sepeteEkle(double fiyat, String urun) {
         toplamFiyat += fiyat;
         txtSonuc.setText(" " + toplamFiyat);
-        urunler += urun + "\n\n\n\n";
+        urunler += urun + ", ";
         txtürün.setText(urunler);
     }
 

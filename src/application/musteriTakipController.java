@@ -37,6 +37,10 @@ public musteriTakipController() {
 
     @FXML
     private URL location;
+    
+
+    @FXML
+    private TextField txt_arama;
 
     @FXML
     private TableView<musteri> TableView_Aramalar;
@@ -54,7 +58,7 @@ public musteriTakipController() {
     private TableColumn<musteri, String> columnKulAdı;
 
     @FXML
-    private TableColumn<musteri, DatePicker> columnTarih;
+    private TableColumn<musteri, LocalDate> columnTarih;
 
     @FXML
     private TableColumn<musteri, Double> columnTutar;
@@ -68,8 +72,7 @@ public musteriTakipController() {
     @FXML
     private DatePicker datebitis;
 
-    @FXML
-    private TextField txt_id;
+   
     
     Connection baglanti = null;
     PreparedStatement sorguİfadesi = null;
@@ -79,7 +82,8 @@ public musteriTakipController() {
 
     @FXML
     void btnsorgula(ActionEvent event) {
-      sql="select * from islemler where islemTarihi > '"+dateBaslangıc.getValue()+"' and islemTarih <'"+datebitis.getValue()+"'" ;
+    	 sql="select * from islemler where islemTarihi > '"+dateBaslangıc.getValue()+"' and islemTarihi <'"+datebitis.getValue()+"'" ;
+
       DegerleriGetir(TableView_Aramalar, sql);
     }
 
@@ -90,15 +94,13 @@ public musteriTakipController() {
 
     @FXML
     void txt_arama_KeyPressed(KeyEvent event) {
-    	if (txt_id.getText().equals("")) {
-    		 sql = "select * from islemler";
-		}
-    	else {
-    		sql="select * from islemler where islemAcıklama like '%" +txt_id.getText()+"%' or user like '%"+txt_id.getText()+"%";  
-		}
-    	
- DegerleriGetir(TableView_Aramalar, sql);
-    }
+    	 if (txt_arama.getText().equals("")) {
+    	        sql = "select * from islemler";
+    	    } else {
+    	        sql = "select * from islemler where islemAcıklama like '%" + txt_arama.getText() + "%' or user like '%" + txt_arama.getText() + "%'";
+    	    }
+    	    DegerleriGetir(TableView_Aramalar, sql);
+    	}
 
     @FXML
     void txt_arama_action(ActionEvent event) {
@@ -106,31 +108,43 @@ public musteriTakipController() {
     }
 
     public void DegerleriGetir(TableView<musteri> tablo, String sql) {
-        sql = "select * from islemler";
-        ObservableList<musteri> kayıtlarListe = FXCollections.observableArrayList();
+    	  ObservableList<musteri> kayıtlarListe = FXCollections.observableArrayList();
 
-        try {
-            sorguİfadesi = baglanti.prepareStatement(sql);
-            ResultSet getirilen = sorguİfadesi.executeQuery();
-            while (getirilen.next()) {
-                kayıtlarListe.add(new musteri(
-                        getirilen.getInt("iId"),
-                        getirilen.getString("user"),
-                        getirilen.getString("islemAcıklama"),
-                        getirilen.getDouble("islemtutar"),
-                        getirilen.getDate("islemTarihi")));
-            }
-            columnID.setCellValueFactory(new PropertyValueFactory<>("id"));
-            columnKulAdı.setCellValueFactory(new PropertyValueFactory<>("kul_ad"));
-            columnAçıklmaa.setCellValueFactory(new PropertyValueFactory<>("islemAciklama"));
-            columnTutar.setCellValueFactory(new PropertyValueFactory<>("ucret"));
-            columnTarih.setCellValueFactory(new PropertyValueFactory<>("islem_tarihi"));
+    	    try {
+    	        sorguİfadesi = baglanti.prepareStatement(sql);
+    	        ResultSet getirilen = sorguİfadesi.executeQuery();
+    	        while (getirilen.next()) {
+    	            LocalDate islemTarihi = null;
+    	            Date date = getirilen.getDate("islemTarihi");
+    	            if (date != null) {
+    	                islemTarihi = date.toLocalDate();
+    	            }
+    	            kayıtlarListe.add(new musteri( 
+    	                getirilen.getInt("iId"),
+    	                getirilen.getString("user"),
+    	                getirilen.getString("islemAcıklama"),
+    	                getirilen.getDouble("islemtutar"),
+    	                islemTarihi)); // Convert SQL Date to LocalDate
+    	        }
+    	        // Set cell value factories
+    	        columnID.setCellValueFactory(new PropertyValueFactory<>("id"));
+    	        columnKulAdı.setCellValueFactory(new PropertyValueFactory<>("kul_ad"));
+    	        columnAçıklmaa.setCellValueFactory(new PropertyValueFactory<>("islemAciklama"));
+    	        columnTutar.setCellValueFactory(new PropertyValueFactory<>("ucret"));
+    	        columnTarih.setCellValueFactory(new PropertyValueFactory<>("islem_tarihi"));
 
-            tablo.setItems(kayıtlarListe);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+    	        TableView_Aramalar.setItems(kayıtlarListe);
+    	    } catch (SQLException e) {
+    	        System.out.println(e.getMessage().toString());
+    	    } finally {
+    	        try {
+    	            if (getirilen != null) getirilen.close();
+    	            if (sorguİfadesi != null) sorguİfadesi.close();
+    	        } catch (SQLException e) {
+    	            e.printStackTrace();
+    	        }
+    	    }
+    	}
 
 
     

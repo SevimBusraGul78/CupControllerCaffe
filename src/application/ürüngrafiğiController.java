@@ -1,37 +1,74 @@
 package application;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import com.IsteMYSql.Util.VeritabaniUtil;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
+import javafx.scene.image.ImageView;
 ;
 
 public class ürüngrafiğiController { // Updated class name according to Java naming conventions
+	public ürüngrafiğiController() {
+		baglanti=VeritabaniUtil.Baglan();
+	}
 
    // Updated variable name to follow camelCase convention
 	@FXML
     private ResourceBundle resources;
+	
+    @FXML
+    private ImageView img2;
 
     @FXML
     private URL location;
 	@FXML
 	private PieChart ürünGrafiği;
+	
+	 Connection baglanti = null;
+     PreparedStatement sorguİfadesi = null;
+     ResultSet getirilen = null;
+     String sql;
+	
+	
     @FXML
     void initialize() {
-        // Veri oluştur
-        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                new PieChart.Data("Java", 40),
-                new PieChart.Data("Python", 30),
-                new PieChart.Data("C++", 20),
-                new PieChart.Data("JavaScript", 10)
-        );
+    	  ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+          try {
+              String sql = "SELECT COUNT(*) FROM login"; // Kişi sayısını say
+              sorguİfadesi = baglanti.prepareStatement(sql);
+              getirilen = sorguİfadesi.executeQuery();
+              if (getirilen.next()) {
+                  int toplamKisiSayisi = getirilen.getInt(1);
+                  int doluKoltukSayisi = Math.min(toplamKisiSayisi, 10);
+                  int bosKoltukSayisi = 10 - doluKoltukSayisi;
+                  int rezerveSayisi=2;
+                  pieChartData.addAll(new PieChart.Data("Dolu", doluKoltukSayisi),
+                                      new PieChart.Data("Boş", bosKoltukSayisi),
+                                      new PieChart.Data("rezerve",rezerveSayisi)           
+                		  );
+              }
+          } catch (SQLException e) {
+              e.printStackTrace();
+          } finally {
+              try {
+                  if (getirilen != null) getirilen.close();
+                  if (sorguİfadesi != null) sorguİfadesi.close();
+                  if (baglanti != null) baglanti.close();
+              } catch (SQLException e) {
+                  e.printStackTrace();
+              }
+          }
 
-        // Pasta grafik tablosu oluştur
-        ürünGrafiği.setTitle("Programlama Dilleri Dağılımı");
-        ürünGrafiği.setData(pieChartData);
-    }
-}
-
+          // Pasta grafiği tablosunu oluştur
+          ürünGrafiği.setTitle("CupCaffe Otomasyonu Doluluk Oranı");
+          ürünGrafiği.setData(pieChartData);
+      }}

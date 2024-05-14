@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="370.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ürüngrafiğiController">
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ürüngrafiğiController">
    <children>
-      <PieChart fx:id="ürünGrafiği" layoutX="93.0" layoutY="25.0" prefHeight="350.0" prefWidth="414.0" title="Ürün Grafik Tablosu" />
+      <ImageView fx:id="img2" fitHeight="350.0" fitWidth="520.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Users/Safranbolu78/Downloads/Brown%20Simple%20Elegant%20Coffee%20Shop%20Presentation%20(9).png" />
+         </image>
+      </ImageView>
+      <PieChart fx:id="ürünGrafiği" layoutX="86.0" layoutY="27.0" prefHeight="246.0" prefWidth="357.0" title="Ürün Grafik Tablosu" />
    </children>
 </AnchorPane>
+
+

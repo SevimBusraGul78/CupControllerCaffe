@@ -9,11 +9,11 @@
    <children>
       <ImageView fitHeight="370.0" fitWidth="650.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Users/Safranbolu78/Downloads/Brown%20Simple%20Elegant%20Coffee%20Shop%20Presentation.png" />
+            <Image url="@../../../../Users/Safranbolu78/Downloads/Brown%20Simple%20Elegant%20Coffee%20Shop%20Presentation%20(8).png" />
          </image>
       </ImageView>
       <Button fx:id="btnstok" layoutX="112.0" layoutY="218.0" mnemonicParsing="false" onAction="#btnStok" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: #F8F5EC;" text="Button" />
-      <Button fx:id="btnmusteri" layoutX="286.0" layoutY="218.0" mnemonicParsing="false" onAction="#btnMusteri" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: #F8F5EC;" text="Button" />
+      <Button fx:id="btnmusteri" layoutX="301.0" layoutY="218.0" mnemonicParsing="false" onAction="#btnMusteri" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: #F8F5EC;" text="Button" />
       <Button fx:id="btnboş" layoutX="477.0" layoutY="224.0" mnemonicParsing="false" onAction="#btnBos" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: #F8F5EC;" text="Button" />
    </children>
 </AnchorPane>
