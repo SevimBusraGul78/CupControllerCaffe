@@ -97,14 +97,10 @@ public musteriTakipController() {
               e.printStackTrace();
           }
       }
-    
-    
     Connection baglanti = null;
     PreparedStatement sorguİfadesi = null;
     ResultSet getirilen = null;
     String sql;
-    
-
     @FXML
     void btnsorgula(ActionEvent event) {
     	 sql="select * from islemler where islemTarihi > '"+dateBaslangıc.getValue()+"' and islemTarihi <'"+datebitis.getValue()+"'" ;
@@ -126,12 +122,9 @@ public musteriTakipController() {
     	    }
     	    DegerleriGetir(TableView_Aramalar, sql);
     	}
-
     @FXML
     void txt_arama_action(ActionEvent event) {
-
     }
-
     public void DegerleriGetir(TableView<musteri> tablo, String sql) {
     	  ObservableList<musteri> kayıtlarListe = FXCollections.observableArrayList();
 
@@ -171,9 +164,6 @@ public musteriTakipController() {
     	    }
     	}
 
-
-    
-    
     @FXML
     void initialize() {
     	sql="select * from islemler";

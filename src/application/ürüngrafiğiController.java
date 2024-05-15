@@ -96,6 +96,6 @@ public class ürüngrafiğiController { // Updated class name according to Java 
           }
 
           // Pasta grafiği tablosunu oluştur
-          ürünGrafiği.setTitle("CupCaffe Otomasyonu Doluluk Oranı");
+          ürünGrafiği.setTitle("CupControllerCaffe Otomasyonu Doluluk Oranı");
           ürünGrafiği.setData(pieChartData);
       }}

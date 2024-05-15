@@ -1,14 +1,11 @@
 package application;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
 import com.IsteMYSql.Util.VeritabaniUtil;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,11 +19,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MenüController {
-
     public MenüController() {
         baglanti = VeritabaniUtil.Baglan();
     }
-
     @FXML
     private ResourceBundle resources;
     
@@ -89,17 +84,15 @@ public class MenüController {
     void btn1(ActionEvent event) {
         sepeteEkle(50, "kahve");
         txt1.setText("kahve");
-        
-        kahvefiyatı.setText("50");
-        
+        kahvefiyatı.setText("50");   
+        azaltStokMiktari("Kahve", 1); 
     }
-
-   
 	@FXML
     void btn2(ActionEvent event) {
         sepeteEkle(30, "kek");
         txt2.setText("kek");
         kekfiyatı.setText("30");
+        azaltStokMiktari("Kek", 1); 
     }
 
     @FXML
@@ -107,6 +100,7 @@ public class MenüController {
         sepeteEkle(40, "pasta");
         txt3.setText("pasta");
         pastafiyatı.setText("40");
+        azaltStokMiktari("Pasta", 1); 
     }
 
     @FXML
@@ -114,6 +108,7 @@ public class MenüController {
         sepeteEkle(20, "kurabiye");
         txt4.setText("kurabiye");
         kurabiyefiyatı.setText("20");
+        azaltStokMiktari("Kurabiye", 1); 
     }
 
     private void sepeteEkle(double fiyat, String urun) {
@@ -122,7 +117,34 @@ public class MenüController {
         urunler += urun + ", ";
         txtürün.setText(urunler);
     }
-  
+    public void azaltStokMiktari(String urunAdi, int miktar) {
+        String sorgu = "";
+        switch (urunAdi) {
+            case "Kahve":
+                sorgu = "UPDATE stoktakibi SET Kahve = Kahve - ?";
+                break;
+            case "Kek":
+                sorgu = "UPDATE stoktakibi SET Kek = Kek - ?";
+                break;
+            case "Pasta":
+                sorgu = "UPDATE stoktakibi SET Pasta = Pasta - ?";
+                break;
+            case "Kurabiye":
+                sorgu = "UPDATE stoktakibi SET Kurabiye = Kurabiye - ?";
+                break;
+            default:
+                System.out.println("Geçersiz ürün adı.");
+                return;
+        }
+
+        try {
+            PreparedStatement preparedStatement = baglanti.prepareStatement(sorgu);
+            preparedStatement.setInt(1, miktar);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     @FXML
     void btnsiparisVer(ActionEvent event) {
         String sql = "INSERT INTO islemler (user, islemAcıklama, islemtutar) VALUES (?, ?, ?)";

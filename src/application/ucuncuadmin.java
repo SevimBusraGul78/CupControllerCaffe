@@ -50,7 +50,7 @@ import javafx.scene.control.TableColumn;
         @FXML
         private URL location;
         
-
+      
         @FXML
         private Button btngeri;
 

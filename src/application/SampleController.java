@@ -29,11 +29,9 @@ public class SampleController {
 	public SampleController() {
 		baglanti=VeritabaniUtil.Baglan();
 	}
-
     @FXML
     private Button adminbtngiris;
     
-
     @FXML
     private TextField admintxtgiriş;
 
@@ -73,8 +71,6 @@ public class SampleController {
     @FXML
     private Label txtsifre;
 
- 
-
     @FXML
     void btnadmingiris(ActionEvent event) {
         if (LoginKontrol(admintxtgiriş.getText(), txtfieldsifre.getText())) {
@@ -113,7 +109,6 @@ public class SampleController {
          }
      }      
     
-
     @FXML
     void btnmusterigiris(ActionEvent event) {
     	if (MLoginKontrol(txtfieldgiris1.getText(), musterigiris.getText())) {
