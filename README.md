@@ -1,8 +1,12 @@
 
-Projede, SceneBuilder ile oluşturduğum basit arayüz sayesinde, hem admin hem de müşteri kullanıcıları rahatlıkla sistemi kullanabiliyor. 
-⭐ Admin giriş sayfasında, stok durumu, müşteri bilgileri ve kafenin yoğunluk oranı MySQL veritabanı bağlantısıyla görüntülenebiliyor. Bu sayede admin, stok yönetimi yapabilir, müşteri bilgilerini kontrol edebilir ve kafenin anlık yoğunluk durumunu takip edebilir. 
-⭐ Müşteri giriş sayfasında ise kullanıcılar menüyü görebilir, sipariş oluşturabilir ve elektronik fişlerini alabilirler. Müşteri sipariş oluşturduğunda, admin sayfasındaki stok durumu otomatik olarak güncellenir ve müşteri adı, müşteri listesine eklenir. Bu iş akışı, hem adminin işini kolaylaştırmakta hem de müşterilere hızlı ve etkin bir hizmet sunmaktadır. Veritabanı bağlantısı için JDBC kullanılmış ve veriler MySQL üzerinde tutulmaktadır.
- Projem, güvenli giriş mekanizmaları ve detaylı raporlama gibi eklemelerle daha da geliştirilebilir.
+# Proje Açıklaması
+
+⭐ **Admin Giriş Sayfası**: Stok durumu, müşteri bilgileri ve kafenin yoğunluk oranı MySQL veritabanı bağlantısıyla görüntülenebiliyor. Bu sayede admin, stok yönetimi yapabilir, müşteri bilgilerini kontrol edebilir ve kafenin anlık yoğunluk durumunu takip edebilir.
+
+⭐ **Müşteri Giriş Sayfası**: Kullanıcılar menüyü görebilir, sipariş oluşturabilir ve elektronik fişlerini alabilirler. Müşteri sipariş oluşturduğunda, admin sayfasındaki stok durumu otomatik olarak güncellenir ve müşteri adı, müşteri listesine eklenir.
+
+Bu iş akışı, hem adminin işini kolaylaştırmakta hem de müşterilere hızlı ve etkin bir hizmet sunmaktadır. Veritabanı bağlantısı için JDBC kullanılmış ve veriler MySQL üzerinde tutulmaktadır. Projem, güvenli giriş mekanizmaları ve detaylı raporlama gibi eklemelerle daha da geliştirilebilir.
+
 
 ![2024-05-15_14-25-19](https://github.com/SevimBusraGul78/JavaProje/assets/116757374/e34f8f90-405b-4e25-b4c8-5da3b67e20ed)
 ![2024-05-15_14-23-08](https://github.com/SevimBusraGul78/JavaProje/assets/116757374/54d837e3-fb8b-43de-9703-eb448d500168)
